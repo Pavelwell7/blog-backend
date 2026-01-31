@@ -9279,7 +9279,7 @@ a {
 }
 
 .header_area .navbar .nav .nav-item:hover .nav-link,.header_area .navbar .nav .nav-item.active .nav-link {
-    color: #ff9907
+    color: #3a414e;
 }
 
 .header_area .navbar .nav .nav-item.submenu {
@@ -18234,6 +18234,7 @@ a {
 
 .ti-heart:before {
     content: "\e634";
+    color: red;
 }
 
 .ti-heart-broken:before {
