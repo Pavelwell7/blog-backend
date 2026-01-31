@@ -1,48 +1,10 @@
-<!DOCTYPE html>
+{% extends 'blog-base.html' %}
 {% load static %}
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Remake Barber - Blog Details</title>
-    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
+{% block title %}
+  <title>{{ post.title }}</title>
+{% endblock %}
 
-    <link rel="stylesheet" href="{% static 'styles.min.css' %}">
-  </head>
-  <body>
-    <!--================Header Menu Area =================-->
-    <header class="header_area">
-      <div class="main_menu">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="container box_1620">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand logo_h" href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-              <ul class="nav navbar-nav menu_nav justify-content-center">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right navbar-social">
-                <li><a href="#"><i class="ti-facebook"></i></a></li>
-                <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-                <li><a href="#"><i class="ti-instagram"></i></a></li>
-                <li><a href="#"><i class="ti-skype"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!--================Header Menu Area =================-->
-
-    <!--================ Hero sm Banner start =================-->
+{% block content_body %}
     <section class="mb-30px">
       <div class="container">
         <div class="hero-banner hero-banner--sm">
@@ -50,7 +12,7 @@
             <h1>Blog details</h1>
             <nav aria-label="breadcrumb" class="banner-breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
               </ol>
             </nav>
@@ -58,10 +20,6 @@
         </div>
       </div>
     </section>
-    <!--================ Hero sm Banner end =================-->
-
-
-    <!--================ Start Blog Post Area =================-->
     <section class="blog-post-area section-margin">
       <div class="container">
         <div class="row">
@@ -96,9 +54,7 @@
               </div>
             </div>
 
-
             <div class="comments-area">
-              <h4>03 Comments</h4>
               {%for comment in post.comments%}
               <div class="comment-list">
                 <div class="single-comment justify-content-between d-flex">
@@ -112,7 +68,7 @@
                     </div>
                   </div>
                   <div class="reply-btn">
-                          <a href="" class="btn-reply text-uppercase">reply</a>
+                    <a href="" class="btn-reply text-uppercase">reply</a>
                   </div>
                 </div>
               </div>
@@ -120,7 +76,6 @@
             </div>
           </div>
 
-          <!-- Start Blog Post Siddebar -->
           <div class="col-lg-4 sidebar-widgets">
             <div class="widget-wrap">
               <div class="single-sidebar-widget newsletter-widget">
@@ -134,19 +89,14 @@
                 <button class="bbtns d-block mt-20 w-100">Subcribe</button>
               </div>
 
-
               <div class="single-sidebar-widget post-category-widget">
                 <h4 class="single-sidebar-widget" style="height:200px;">Здесь будет реклама</h4>
               </div>
             </div>
           </div>
-          <!-- End Blog Post Siddebar -->
         </div>
       </div>
     </section>
-    <!--================ End Blog Post Area =================-->
-
-    <!--================ Start Footer Area =================-->
     <footer class="footer-area section-padding">
       <div class="container">
         <div class="row">
@@ -215,8 +165,8 @@
         </div>
       </div>
     </footer>
-    <!--================ End Footer Area =================-->
 
-    <script src="{% static 'scripts.js' %}"></script>
+{% endblock %}
+
   </body>
 </html>
