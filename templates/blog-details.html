@@ -26,9 +26,9 @@
           <div class="col-lg-8">
             <div class="main_blog_details">
               {% if post.image%}
-              <img class="img-fluid" src="{{post.image}}" alt="">
+              <img class="img-fluid" src="{{post.image}}" alt="Изображение поста">
               {%else%}
-              <img class="img-fluid" src="{% static 'img/top/blog.png' %}" alt="">
+              <img class="img-fluid" src="{% static 'img/top/blog.png' %}" alt="Изображение по умолчанию">
               {% endif %}
               <h4>{{post.title }}<br /></h4>
               <div class="user_details">
